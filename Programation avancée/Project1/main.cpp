@@ -8,36 +8,32 @@
 int main()
 {
 	FILE* pFile = NULL;
+
 	errno_t err = fopen_s(&pFile, "Capybara.bmp", "rb");
+
 	if (err != 0)
 	{
-		std::cout << "Erreur d'ouverture du fichier";
+		std::cout << "Erreur";
 		return 1;
 	}
 
-	//Creation de notre structure de stockage de datas
 	BITMAPFILEHEADER fileHeader;
 	BITMAPINFOHEADER infoHeader;
 
-	//Remplir les datas
 	fread(&fileHeader, sizeof(BITMAPFILEHEADER), 1, pFile);
 	fread(&infoHeader, sizeof(BITMAPINFOHEADER), 1, pFile);
 
-	std::cout << "Largeure " << infoHeader.biWidth << " \nHauteur " << infoHeader.biHeight << " \nBits/pixel " << infoHeader.biBitCount << std::endl;
+	std::cout << "Hauteur: " << infoHeader.biHeight << "\n Largeur: " << infoHeader.biWidth << "\n Bits: " << infoHeader.biBitCount << std::endl;
 
-	//On passe au pixel
 	fseek(pFile, fileHeader.bfOffBits, 0);
 
-	//Calculer la taille
 	size_t pixelArraySize = infoHeader.biSizeImage;
 
-	//Allocation mémoire
 	unsigned char* pixelData = (unsigned char*)malloc(pixelArraySize);
 
-	//Transfer les datas de pFile a pixelData
+
 	fread(pixelData, 1, pixelArraySize, pFile);
 
-	//Fermeture de pFile
 	fclose(pFile);
 
 	for (size_t i = 0; i < pixelArraySize; i += 3)
@@ -47,14 +43,12 @@ int main()
 		pixelData[i + 2];
 	}
 
-	//Creation nouveau fichier
 	FILE* pOut = NULL;
-	err = fopen_s(&pOut, "NewCapybara.bmp", "wb");
+	err = fopen_s(&pOut, "NewNewCapybara.bmp", "wb");
 
 	if (err != 0)
 	{
-		std::cout << "Erreur dans la création du fichier" << std::endl;
-		free(pixelData);
+		std::cout << "Erreur";
 		return 1;
 	}
 
@@ -67,6 +61,5 @@ int main()
 
 	free(pixelData);
 
-	std::cout << "Nouveau fichier sauvegarde";
-
+	std::cout << "Nouveau fichier cree";
 }
