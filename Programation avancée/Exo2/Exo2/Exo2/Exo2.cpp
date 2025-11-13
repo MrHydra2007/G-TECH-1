@@ -30,6 +30,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     UNREFERENCED_PARAMETER(lpCmdLine);
 
     // TODO: Placez le code ici.
+
    // Image image(L"Capybara.bmp");
    // graphics.DrawImage(&image, 60, 10);
 
@@ -163,7 +164,6 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             (HMENU)ID_EDIT,
             hInst,
             NULL);
-        break;
 
     case WM_COMMAND:
         {
