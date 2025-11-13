@@ -3,9 +3,12 @@
 
 #include "framework.h"
 #include "Exo2.h"
+#include<iostream>
+
 
 #define MAX_LOADSTRING 100
 #define ID_BOUTTON 200
+#define ID_EDIT 250
 
 // Variables globales :
 HINSTANCE hInst;                                // instance actuelle
@@ -27,6 +30,9 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     UNREFERENCED_PARAMETER(lpCmdLine);
 
     // TODO: Placez le code ici.
+   // Image image(L"Capybara.bmp");
+   // graphics.DrawImage(&image, 60, 10);
+
 
     // Initialise les chaînes globales
     LoadStringW(hInstance, IDS_APP_TITLE, szTitle, MAX_LOADSTRING);
@@ -54,23 +60,6 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     }
 
     return (int) msg.wParam;
-}
-
-
-
-void MonBouton(HWND hwnd)
-{
-    HWND hBouton;
-    hBouton = CreateWindow(
-        L"BUTTON",
-        L"OK",
-        WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
-        10, 10,
-        100, 50,
-        hwnd,
-        (HMENU)ID_BOUTTON,
-        hInst,
-        NULL);
 }
 
 void TestBouton(HWND hwnd, WPARAM wParam)
@@ -149,10 +138,31 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
+    HWND hBouton[2] = { nullptr };
     switch (message)
     {
     case WM_CREATE:
-        MonBouton(hWnd);
+        hBouton[0] = CreateWindow(
+            L"BUTTON",
+            L"OK",
+            WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
+            10, 10,
+            100, 50,
+            hWnd,
+            (HMENU)ID_BOUTTON,
+            hInst,
+            NULL);
+
+        hBouton[1] = CreateWindow(
+            L"EDIT",
+            L"Donnez votre avis",
+            WS_CHILD | WS_VISIBLE | BS_TEXT,
+            120, 10,
+            1000, 50,
+            hWnd,
+            (HMENU)ID_EDIT,
+            hInst,
+            NULL);
         break;
 
     case WM_COMMAND:
