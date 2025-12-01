@@ -23,7 +23,7 @@ void DrawVerticalLine(SDL_Renderer* renderer, int x, int y, int length)
 }
 
 
-/*void DrawLine(SDL_Renderer* renderer, int x1, int y1, int x2, int y2)
+void DrawLine(SDL_Renderer* renderer, int x1, int y1, int x2, int y2)
 {
 	int diffx = x2 - x1;
 	int diffy = y2 - y1;
@@ -38,7 +38,7 @@ void DrawVerticalLine(SDL_Renderer* renderer, int x, int y, int length)
 		}
 	}
 }
-*/
+
 
 void DrawSquare(SDL_Renderer* renderer, int x1, int y1, int x2, int y2)
 {
@@ -92,9 +92,9 @@ void Draw(SDL_Renderer* renderer)
 	DrawSquare(renderer, 20, 20, 100, 100);
 	DrawHorizontalLine(renderer, 200, 300, 50);
 	DrawVerticalLine(renderer, 500, 10, 50);
-	//DrawLine(renderer, 20, 300, 50, 150);
+	DrawLine(renderer, 20, 300, 50, 150);
 	DrawRectangle(renderer, 100, 300, 400, 100);
-	DrawCircle(renderer, 150, 150, 100, 600);
+	DrawCircle(renderer, 150, 150, 100, 5000);
 	SDL_RenderPresent(renderer);
 }
 
