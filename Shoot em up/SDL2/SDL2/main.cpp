@@ -39,6 +39,7 @@ void DrawVerticalLine(SDL_Renderer* renderer, int x, int y, int length)
 	}
 }
 */
+
 void DrawSquare(SDL_Renderer* renderer, int x1, int y1, int x2, int y2)
 {
 	SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
@@ -62,10 +63,27 @@ void DrawRectangle(SDL_Renderer* renderer, int x, int y, int width, int height)
 }
 
 
-void DrawCircle(SDL_Renderer* renderer, int centerX, int centerY, int radius, int precision)
+void DrawCircle(SDL_Renderer* renderer, int centerX, int centerY, int radius, int precision) 
 {
-	SDL_SetRenderDrawColor(renderer, 25, 185, 96, 255);
-	
+	if (precision < 2) 
+	{
+		return;
+	}
+	float angleStep = (2.0 * M_PI) / precision;
+
+	for (int i = 0; i < precision; i++) 
+	{
+		float angle1 = i * angleStep;
+		float angle2 = ((i + 1) % precision) * angleStep;
+
+		int x1 = centerX + (int)(radius * cos(angle1));
+		int y1 = centerY + (int)(radius * sin(angle1));
+
+		int x2 = centerX + (int)(radius * cos(angle2));
+		int y2 = centerY + (int)(radius * sin(angle2));
+
+		SDL_RenderDrawLine(renderer, x1, y1, x2, y2);
+	}
 }
 
 
@@ -74,8 +92,9 @@ void Draw(SDL_Renderer* renderer)
 	DrawSquare(renderer, 20, 20, 100, 100);
 	DrawHorizontalLine(renderer, 200, 300, 50);
 	DrawVerticalLine(renderer, 500, 10, 50);
-	//DrawLine(renderer, 20, 300, 50);
+	//DrawLine(renderer, 20, 300, 50, 150);
 	DrawRectangle(renderer, 100, 300, 400, 100);
+	DrawCircle(renderer, 150, 150, 100, 600);
 	SDL_RenderPresent(renderer);
 }
 
