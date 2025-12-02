@@ -2,20 +2,20 @@
 
 
 
-void Cercle::Draw(SDL_Renderer* renderer, float centerX, float centerY, float radius, float precision)
+void Cercle::Draw(SDL_Renderer* renderer)
 {
-	if (precision < 2)
+	if (height < 2)
 	{
 		return;
 	}
-	float step = (2 * M_PI) / precision;
-	for (int i = 0; i <= precision; ++i)
+	float step = (2 * M_PI) / height;
+	for (int i = 0; i <= height; ++i)
 	{
-		int x1 = radius * cos(step * i) + centerX;
-		int y1 = radius * sin(step * i) + centerY;
+		int x1 = width * cos(step * i) + x;
+		int y1 = width * sin(step * i) + y;
 
-		int x2 = radius * cos(step * (i + 1)) + centerX;
-		int y2 = radius * sin(step * (i + 1)) + centerY;
+		int x2 = width * cos(step * (i + 1)) + x;
+		int y2 = width * sin(step * (i + 1)) + y;
 		SDL_RenderDrawLine(renderer, x1, y1, x2, y2);
 	}
 }

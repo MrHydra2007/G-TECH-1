@@ -4,8 +4,8 @@
 class Cercle : public Geometry
 {
 public:
-	Cercle(float centerX, float centerY, float radius, float precision) : Geometry(x, y, width, height) {}
+	Cercle(int x, int y, int width, int height) : Geometry(x, y, width, height) {}
 
-	void Geometry::Draw(SDL_Renderer* renderer, float centerX, float centerY, float radius, float precision) override;
+	void Geometry::Draw(SDL_Renderer* renderer) override;
 };
 
