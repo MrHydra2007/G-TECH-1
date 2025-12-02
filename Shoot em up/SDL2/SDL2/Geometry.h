@@ -1,17 +1,20 @@
 #pragma once
 #include <SDL.h>
+#include"Math.h"
 class Geometry
 {
 protected:
-	int x;
-	int y;
-	int width;
-	int height;
+	int m_x;
+	int m_y;
+	int m_width;
+	int m_height;
 
 public:
 	Geometry(int x, int y, int width, int height);
 	~Geometry() = default;
 
 	virtual void Draw(SDL_Renderer* renderer) = 0;
+	void SetPosition(int x, int y, float anchorX, float anchorY);
+	//Vector2 GetPosition(float anchorX, float anchorY);
 };
 

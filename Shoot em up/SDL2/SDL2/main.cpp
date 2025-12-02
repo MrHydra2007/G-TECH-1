@@ -67,7 +67,10 @@ void Draw(SDL_Renderer* renderer)
 	//DrawHorizontalLine(renderer, 200, 300, 50);
 	//DrawVerticalLine(renderer, 500, 10, 50);
 	//DrawLine(renderer, 20, 300, 50, 150);
+	rect.SetPosition(0, 0, 0.f, 0.f);
 	rect.Draw(renderer);
+
+	cercle.SetPosition(0, 0, 0.5f, 0.5f);
 	cercle.Draw(renderer);
 
 	SDL_RenderPresent(renderer);
