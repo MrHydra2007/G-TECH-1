@@ -24,13 +24,23 @@ void DrawLine(SDL_Renderer* renderer, float x1, float y1, float x2, float y2)
 {
 	float diffx = x2 - x1;
 	float diffy = y2 - y1;
-	SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
-	if (diffx < 0)
+	
+	int distx = abs(diffx);
+	int disty = abs(diffy);
+
+	int max = std::max(distx, disty);
+
+	float stepX = diffx / (float)max;
+	float stepY = diffy / (float)max;
+
+	float x = 1;
+	float y = 1;
+
+	for (int i = 0; i < max; ++i)
 	{
-		for (int i = diffx; i != 0; ++i)
-		{
-			SDL_RenderDrawPoint(renderer, x1, y1);
-		}
+		SDL_RenderDrawPoint(renderer, x, y);
+		x += stepX;
+		y += stepY;
 	}
 }
 
