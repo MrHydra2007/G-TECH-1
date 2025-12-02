@@ -1,4 +1,4 @@
 ﻿  Geometry.cpp
-C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\SDL2\SDL2\Geometry.cpp(7,10): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
-C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\SDL2\SDL2\Geometry.cpp(8,10): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
+C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\SDL2\SDL2\Geometry.cpp(7,13): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
+C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\SDL2\SDL2\Geometry.cpp(8,13): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
   SDL2.vcxproj -> C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\SDL2\x64\Debug\SDL2.exe
