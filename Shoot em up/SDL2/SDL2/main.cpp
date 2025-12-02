@@ -1,6 +1,11 @@
 #include <SDL.h>
+#include "Rectangle.h"
+#include "Geometry.h"
+#include "Cercle.h"
 #include <iostream>
 
+Rectangle rect = Rectangle(150, 100, 200, 100);
+Cercle cercle = Cercle(50,)
 
 void DrawHorizontalLine(SDL_Renderer* renderer, int x, int y, int length)
 {
@@ -56,41 +61,13 @@ void DrawSquare(SDL_Renderer* renderer, int x1, int y1, int x2, int y2)
 	}
 }
 
-void DrawRectangle(SDL_Renderer* renderer, int x, int y, int width, int height)
-{
-	SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
-	SDL_RenderDrawLine(renderer, x, y, x + width, y);
-	SDL_RenderDrawLine(renderer, x, y + height, x + width, y + height);
-	SDL_RenderDrawLine(renderer, x, y, x, y + height);
-	SDL_RenderDrawLine(renderer, x + width, y, x + width, y + height);
-}
-
-void DrawCircle(SDL_Renderer* renderer, int centerX, int centerY, int radius, int precision)
-{
-	if (precision < 2)
-	{
-		return;
-	}
-	float step = (2 * M_PI) / precision;
-	for (int i = 0; i <= precision; ++i)
-	{
-		int x1 = radius * cos(step * i) + centerX;
-		int y1 = radius * sin(step * i) + centerY;
-
-		int x2 = radius * cos(step * (i + 1)) + centerX;
-		int y2 = radius * sin(step * (i + 1)) + centerY;
-		SDL_RenderDrawLine(renderer, x1, y1, x2, y2);
-	}
-}
-
 void Draw(SDL_Renderer* renderer)
 {
 	DrawSquare(renderer, 20, 20, 100, 100);
 	DrawHorizontalLine(renderer, 200, 300, 50);
 	DrawVerticalLine(renderer, 500, 10, 50);
 	DrawLine(renderer, 20, 300, 50, 150);
-	DrawRectangle(renderer, 100, 300, 400, 100);
-	DrawCircle(renderer, 150, 150, 100, 5000);
+	rect.Draw(renderer);
 
 	SDL_RenderPresent(renderer);
 }

@@ -1,11 +1,17 @@
-﻿  main.cpp
-C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\SDL2\SDL2\main.cpp(28,12): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
-C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\SDL2\SDL2\main.cpp(29,12): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
-C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\SDL2\SDL2\main.cpp(41,36): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
-C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\SDL2\SDL2\main.cpp(41,33): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
-C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\SDL2\SDL2\main.cpp(74,13): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
-C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\SDL2\SDL2\main.cpp(77,10): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
-C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\SDL2\SDL2\main.cpp(78,10): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
-C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\SDL2\SDL2\main.cpp(80,10): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
-C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\SDL2\SDL2\main.cpp(81,10): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
-  SDL2.vcxproj -> C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\SDL2\x64\Debug\SDL2.exe
+﻿  Cercle.cpp
+C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\SDL2\SDL2\Cercle.h(9,17): error C3254: 'Cercle' : la classe contient une substitution explicite 'Draw', mais ne dérive pas d'une interface qui contient la déclaration de fonction
+  (compiler le fichier source 'Cercle.cpp')
+  
+C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\SDL2\SDL2\Cercle.h(9,17): error C3241: 'void Cercle::Draw(SDL_Renderer *,float,float,float,float)' : cette méthode n'a pas été introduite par 'Geometry'
+  (compiler le fichier source 'Cercle.cpp')
+      C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\SDL2\SDL2\Cercle.h(9,17):
+      voir la déclaration de 'Cercle::Draw'
+  
+C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\SDL2\SDL2\Cercle.h(9,17): error C3668: 'Cercle::Draw' : la méthode comprenant le spécificateur de substitution 'override' n'a substitué aucune méthode de la classe de base
+  (compiler le fichier source 'Cercle.cpp')
+  
+C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\SDL2\SDL2\Cercle.cpp(11,13): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\SDL2\SDL2\Cercle.cpp(14,10): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\SDL2\SDL2\Cercle.cpp(15,10): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\SDL2\SDL2\Cercle.cpp(17,10): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\SDL2\SDL2\Cercle.cpp(18,10): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
