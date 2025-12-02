@@ -1,6 +1,7 @@
 #include <SDL.h>
 #include <iostream>
 
+
 void DrawHorizontalLine(SDL_Renderer* renderer, int x, int y, int length)
 {
 	SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
@@ -19,10 +20,10 @@ void DrawVerticalLine(SDL_Renderer* renderer, int x, int y, int length)
 	}
 }
 
-void DrawLine(SDL_Renderer* renderer, int x1, int y1, int x2, int y2)
+void DrawLine(SDL_Renderer* renderer, float x1, float y1, float x2, float y2)
 {
-	int diffx = x2 - x1;
-	int diffy = y2 - y1;
+	float diffx = x2 - x1;
+	float diffy = y2 - y1;
 	SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
 	if (diffx < 0)
 	{
@@ -60,15 +61,14 @@ void DrawCircle(SDL_Renderer* renderer, int centerX, int centerY, int radius, in
 	{
 		return;
 	}
-	float angleStep = (2.0 * M_PI) / precision;
-	for (int i = 0; i < precision; i++)
+	float step = (2 * M_PI) / precision;
+	for (int i = 0; i <= precision; ++i)
 	{
-		float angle1 = i * angleStep;
-		float angle2 = ((i + 1) % precision) * angleStep;
-		int x1 = centerX + (int)(radius * cos(angle1));
-		int y1 = centerY + (int)(radius * sin(angle1));
-		int x2 = centerX + (int)(radius * cos(angle2));
-		int y2 = centerY + (int)(radius * sin(angle2));
+		int x1 = radius * cos(step * i) + centerX;
+		int y1 = radius * sin(step * i) + centerY;
+
+		int x2 = radius * cos(step * (i + 1)) + centerX;
+		int y2 = radius * sin(step * (i + 1)) + centerY;
 		SDL_RenderDrawLine(renderer, x1, y1, x2, y2);
 	}
 }
