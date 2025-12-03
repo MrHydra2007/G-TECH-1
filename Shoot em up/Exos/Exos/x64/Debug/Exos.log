@@ -1,6 +1,2 @@
-﻿  main.cpp
-C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\SDL2\SDL2\main.cpp(32,12): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
-C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\SDL2\SDL2\main.cpp(33,12): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
-C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\SDL2\SDL2\main.cpp(45,36): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
-C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\SDL2\SDL2\main.cpp(45,33): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
+﻿  Image.cpp
   Exos.vcxproj -> C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\Exos\x64\Debug\Exos.exe
