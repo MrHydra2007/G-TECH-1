@@ -8,7 +8,10 @@ void Geometry::SetPosition(int x, int y, float anchorX, float anchorY)
     m_y = y - (m_height * anchorY);
 }
 
-//Vector2 Geometry::GetPosition(float anchorX, float anchorY)
-//{
-
-//}
+Vector2 Geometry::GetPosition(float anchorX, float anchorY)
+{
+    Vector2 pos;
+    pos.width = m_x + (m_width * anchorX);
+    pos.height = m_y + (m_height * anchorY);
+    return pos;
+}

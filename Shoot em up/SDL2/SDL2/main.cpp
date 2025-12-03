@@ -4,8 +4,7 @@
 #include "Cercle.h"
 #include <iostream>
 
-Rectangle rect = Rectangle(150, 100, 200, 100);
-Cercle cercle = Cercle(250, 200, 100, 25);
+Rectangle rect = Rectangle(0, 0, 100, 60);
 
 void DrawHorizontalLine(SDL_Renderer* renderer, int x, int y, int length)
 {
@@ -29,7 +28,7 @@ void DrawLine(SDL_Renderer* renderer, float x1, float y1, float x2, float y2)
 {
 	float diffx = x2 - x1;
 	float diffy = y2 - y1;
-	
+
 	int distx = abs(diffx);
 	int disty = abs(diffy);
 
@@ -63,15 +62,16 @@ void DrawSquare(SDL_Renderer* renderer, int x1, int y1, int x2, int y2)
 
 void Draw(SDL_Renderer* renderer)
 {
-	//DrawSquare(renderer, 20, 20, 100, 100);
-	//DrawHorizontalLine(renderer, 200, 300, 50);
-	//DrawVerticalLine(renderer, 500, 10, 50);
-	//DrawLine(renderer, 20, 300, 50, 150);
-	rect.SetPosition(0, 0, 0.5f, 0.5f);
+	rect.SetPosition(0, 0, 0.f, 0.f);
 	rect.Draw(renderer);
-
-	cercle.SetPosition(500, 100, 1.f, 1.f);
-	cercle.Draw(renderer);
+	rect.SetPosition(800, 0, 1.f, 0.f);
+	rect.Draw(renderer);
+	rect.SetPosition(800, 800, 1.f, 1.f);
+	rect.Draw(renderer);
+	rect.SetPosition(0, 800, 0.f, 1.f);
+	rect.Draw(renderer);
+	rect.SetPosition(400, 400, 0.5f, 0.5f);
+	rect.Draw(renderer);
 
 	SDL_RenderPresent(renderer);
 }
@@ -84,7 +84,7 @@ int main(int argc, char* argv[])
 		return 1;
 	}
 
-	SDL_Window* window = SDL_CreateWindow("SDL", 100, 100, 640, 480, SDL_WINDOW_RESIZABLE);
+	SDL_Window* window = SDL_CreateWindow("SDL", 100, 100, 801, 801, SDL_WINDOW_RESIZABLE);
 	if (!window)
 	{
 		std::cout << "SDL_CreateWindow Error: " << SDL_GetError() << std::endl;
@@ -113,6 +113,10 @@ int main(int argc, char* argv[])
 				running = false;
 			}
 		}
+
+		SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+		SDL_RenderClear(renderer);
+
 		Draw(renderer);
 	}
 
