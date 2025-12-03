@@ -130,12 +130,14 @@
     <ClCompile Include="..\..\SDL2\SDL2\Geometry.cpp" />
     <ClCompile Include="..\..\SDL2\SDL2\main.cpp" />
     <ClCompile Include="..\..\SDL2\SDL2\Rectangle.cpp" />
+    <ClCompile Include="Image.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\SDL2\SDL2\Cercle.h" />
     <ClInclude Include="..\..\SDL2\SDL2\Geometry.h" />
     <ClInclude Include="..\..\SDL2\SDL2\Math.h" />
     <ClInclude Include="..\..\SDL2\SDL2\Rectangle.h" />
+    <ClInclude Include="Image.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
