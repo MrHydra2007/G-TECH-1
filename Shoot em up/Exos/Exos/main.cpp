@@ -3,8 +3,7 @@
 #include "Geometry.h"
 #include "Cercle.h"
 #include <iostream>
-
-Rectangle rect = Rectangle(0, 0, 100, 60);
+#include "Image.h"
 
 void DrawHorizontalLine(SDL_Renderer* renderer, int x, int y, int length)
 {
@@ -60,24 +59,9 @@ void DrawSquare(SDL_Renderer* renderer, int x1, int y1, int x2, int y2)
 	}
 }
 
-void Draw(SDL_Renderer* renderer)
-{
-	rect.SetPosition(0, 0, 0.f, 0.f);
-	rect.Draw(renderer);
-	rect.SetPosition(800, 0, 1.f, 0.f);
-	rect.Draw(renderer);
-	rect.SetPosition(800, 800, 1.f, 1.f);
-	rect.Draw(renderer);
-	rect.SetPosition(0, 800, 0.f, 1.f);
-	rect.Draw(renderer);
-	rect.SetPosition(400, 400, 0.5f, 0.5f);
-	rect.Draw(renderer);
-
-	SDL_RenderPresent(renderer);
-}
-
 int main(int argc, char* argv[])
 {
+
 	if (SDL_Init(SDL_INIT_VIDEO) != 0)
 	{
 		std::cout << "SDL_Init Error: " << SDL_GetError() << std::endl;
@@ -104,6 +88,10 @@ int main(int argc, char* argv[])
 	bool running = true;
 	SDL_Event event;
 
+	Rectangle rect = Rectangle(0, 0, 100, 60);
+	Image img(renderer, "");
+
+
 	while (running)
 	{
 		while (SDL_PollEvent(&event))
@@ -117,7 +105,23 @@ int main(int argc, char* argv[])
 		SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 		SDL_RenderClear(renderer);
 
-		Draw(renderer);
+	
+
+		rect.SetPosition(0, 0, 0.f, 0.f);
+		rect.Draw(renderer);
+		rect.SetPosition(800, 0, 1.f, 0.f);
+		rect.Draw(renderer);
+		rect.SetPosition(800, 800, 1.f, 1.f);
+		rect.Draw(renderer);
+		rect.SetPosition(0, 800, 0.f, 1.f);
+		rect.Draw(renderer);
+		rect.SetPosition(400, 400, 0.5f, 0.5f);
+		rect.Draw(renderer);
+
+		img.SetPosition(0, 0, 0.f, 0.f);
+		img.Draw(renderer);
+
+		SDL_RenderPresent(renderer);
 	}
 
 	SDL_DestroyRenderer(renderer);
