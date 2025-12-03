@@ -1,10 +1,12 @@
 #include <SDL.h>
 #include "Rectangle.h"
 #include "Geometry.h"
+#include "C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\Exos\Exos\Image.h"
 #include "Cercle.h"
 #include <iostream>
 
 Rectangle rect = Rectangle(0, 0, 100, 60);
+Image img;
 
 void DrawHorizontalLine(SDL_Renderer* renderer, int x, int y, int length)
 {
@@ -72,6 +74,8 @@ void Draw(SDL_Renderer* renderer)
 	rect.Draw(renderer);
 	rect.SetPosition(400, 400, 0.5f, 0.5f);
 	rect.Draw(renderer);
+
+	img.Draw(renderer);
 
 	SDL_RenderPresent(renderer);
 }
