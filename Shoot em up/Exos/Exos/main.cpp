@@ -89,7 +89,7 @@ int main(int argc, char* argv[])
 	SDL_Event event;
 
 	Rectangle rect = Rectangle(0, 0, 100, 60);
-	Image img(renderer, "");
+	Image img(renderer, "C:/Users/icotvaquero/Documents/image.bmp");
 
 
 	while (running)

@@ -1,27 +1,15 @@
-﻿  Cercle.cpp
-C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\SDL2\SDL2\Cercle.cpp(11,13): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
-C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\SDL2\SDL2\Cercle.cpp(14,10): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
-C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\SDL2\SDL2\Cercle.cpp(15,10): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
-C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\SDL2\SDL2\Cercle.cpp(17,10): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
-C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\SDL2\SDL2\Cercle.cpp(18,10): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
-  Geometry.cpp
-C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\SDL2\SDL2\Geometry.cpp(7,13): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
-C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\SDL2\SDL2\Geometry.cpp(8,13): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
-C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\SDL2\SDL2\Geometry.cpp(14,21): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
-C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\SDL2\SDL2\Geometry.cpp(15,22): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
-  main.cpp
-C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\SDL2\SDL2\main.cpp(31,12): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
-C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\SDL2\SDL2\main.cpp(32,12): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
-C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\SDL2\SDL2\main.cpp(44,36): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
-C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\SDL2\SDL2\main.cpp(44,33): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
+﻿  main.cpp
   Rectangle.cpp
-C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\SDL2\SDL2\main.cpp(92,11): error C2665: 'Image::Image' : aucune fonction surchargée n’a pu convertir tous les types d’arguments.
-      C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\SDL2\SDL2\Image.h(8,5):
+C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\Exos\Exos\main.cpp(31,12): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
+C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\Exos\Exos\main.cpp(32,12): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
+C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\Exos\Exos\main.cpp(44,36): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
+C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\Exos\Exos\main.cpp(44,33): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
+C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\Exos\Exos\main.cpp(92,11): error C2665: 'Image::Image' : aucune fonction surchargée n’a pu convertir tous les types d’arguments.
+      C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\Exos\Exos\Image.h(8,5):
       est peut-être 'Image::Image(SDL_Renderer *,std::string &)'
-          C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\SDL2\SDL2\main.cpp(92,11):
-          'Image::Image(SDL_Renderer *,std::string &)' : impossible de convertir l'argument 2 de 'const char [1]' en 'std::string &'
-      C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\SDL2\SDL2\main.cpp(92,11):
-      lors de la tentative de mise en correspondance de la liste des arguments '(SDL_Renderer *, const char [1])'
+          C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\Exos\Exos\main.cpp(92,11):
+          'Image::Image(SDL_Renderer *,std::string &)' : impossible de convertir l'argument 2 de 'const char [41]' en 'std::string &'
+      C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\Exos\Exos\main.cpp(92,11):
+      lors de la tentative de mise en correspondance de la liste des arguments '(SDL_Renderer *, const char [41])'
   
-  Image.cpp
   Génération de code en cours...

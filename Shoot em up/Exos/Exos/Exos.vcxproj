@@ -126,18 +126,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\SDL2\SDL2\Cercle.cpp" />
-    <ClCompile Include="..\..\SDL2\SDL2\Geometry.cpp" />
-    <ClCompile Include="..\..\SDL2\SDL2\main.cpp" />
-    <ClCompile Include="..\..\SDL2\SDL2\Rectangle.cpp" />
+    <ClCompile Include="Cercle.cpp" />
+    <ClCompile Include="Geometry.cpp" />
     <ClCompile Include="Image.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Rectangle.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\SDL2\SDL2\Cercle.h" />
-    <ClInclude Include="..\..\SDL2\SDL2\Geometry.h" />
-    <ClInclude Include="..\..\SDL2\SDL2\Math.h" />
-    <ClInclude Include="..\..\SDL2\SDL2\Rectangle.h" />
+    <ClInclude Include="Cercle.h" />
+    <ClInclude Include="Geometry.h" />
     <ClInclude Include="Image.h" />
+    <ClInclude Include="Math.h" />
+    <ClInclude Include="Rectangle.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
