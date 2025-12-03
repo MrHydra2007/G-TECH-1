@@ -1,2 +1,5 @@
 ﻿  Image.cpp
-  Exos.vcxproj -> C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\Exos\x64\Debug\Exos.exe
+C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\Exos\Exos\Image.cpp(5,1): error C2512: 'Geometry' : aucun constructeur par défaut approprié disponible
+      C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\Exos\Exos\Geometry.h(5,7):
+      voir la déclaration de 'Geometry'
+  
