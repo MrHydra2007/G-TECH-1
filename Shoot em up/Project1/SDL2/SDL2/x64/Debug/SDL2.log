@@ -1,0 +1,6 @@
+﻿  main.cpp
+C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\SDL2\SDL2\main.cpp(33,12): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
+C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\SDL2\SDL2\main.cpp(34,12): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
+C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\SDL2\SDL2\main.cpp(46,36): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
+C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\SDL2\SDL2\main.cpp(46,33): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
+  SDL2.vcxproj -> C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\SDL2\x64\Debug\SDL2.exe
