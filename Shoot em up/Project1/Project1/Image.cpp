@@ -3,12 +3,11 @@
 
 void Image::Draw(SDL_Renderer* renderer)
 {
-    SDL_Surface* image = SDL_LoadBMP("C:/Users/icotvaquero/Documents/image.bmp");
-    if (!image)
-    {
-        std::cout<<"Erreur de chargement de l'image.";
+    SDL_Surface* lettuce_sur = SDL_LoadBMP("lettuce.png");
+    if (lettuce_sur == NULL) {
+        std::cout << "Error loading image: " << SDL_GetError();
         return;
     }
-    SDL_Texture* monImage = SDL_CreateTextureFromSurface(renderer, image);
-    SDL_FreeSurface(image);
+
+
 }

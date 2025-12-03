@@ -136,6 +136,7 @@ int main(int argc, char* argv[])
 
 #include <iostream>
 #include "SDL.h"
+#include "SDL_image.h"
 
 		int main(int argc, char* argv[]) {
 			if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_EVENTS) < 0) {
@@ -155,9 +156,9 @@ int main(int argc, char* argv[])
 				return 4;
 			}
 
-			SDL_Surface* lettuce_sur = SDL_LoadBMP("C:/Users/icotvaquero/Documents/image.bmp");
+			SDL_Surface* lettuce_sur = IMG_Load("C:/Users/icotvaquero/Documents/image.bmp");
 			if (lettuce_sur == NULL) {
-				std::cout << "Error loading image: " << SDL_GetError();
+				std::cout << "Error loading image: " << IMG_GetError();
 				return 5;
 			}
 
