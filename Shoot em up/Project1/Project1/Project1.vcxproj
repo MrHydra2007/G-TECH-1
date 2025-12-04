@@ -129,6 +129,7 @@
     <ClCompile Include="Cercle.cpp" />
     <ClCompile Include="Geometry.cpp" />
     <ClCompile Include="Image.cpp" />
+    <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Rectangle.cpp" />
   </ItemGroup>
@@ -136,6 +137,7 @@
     <ClInclude Include="Cercle.h" />
     <ClInclude Include="Geometry.h" />
     <ClInclude Include="Image.h" />
+    <ClInclude Include="InputManager.h" />
     <ClInclude Include="Math.h" />
     <ClInclude Include="Rectangle.h" />
   </ItemGroup>

@@ -1,6 +1,7 @@
 #include <SDL.h>
 #include "SDL_image.h"
 #include "Rectangle.h"
+#include "InputManager.h"
 #include "Geometry.h"
 #include "Cercle.h"
 #include <iostream>
@@ -60,6 +61,8 @@ void DrawSquare(SDL_Renderer* renderer, int x1, int y1, int x2, int y2)
 	}
 }
 
+
+
 int main(int argc, char* argv[])
 {
 
@@ -86,44 +89,17 @@ int main(int argc, char* argv[])
 		return 1;
 	}
 
-	bool running = true;
-	SDL_Event event;
+	//Image img(renderer, "C:/Users/icotvaquero/Documents/image.bmp");
+	Cercle circle(400,400,50,200);
 
-	Rectangle rect = Rectangle(0, 0, 100, 60);
-	Image img(renderer, "C:/Users/icotvaquero/Documents/image.bmp");
+	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+	SDL_RenderClear(renderer);
 
+	circle.SetPosition(0, 0, 0.5f, 0.5f);
+	circle.Draw(renderer);
+	SDL_RenderPresent(renderer);
 
-	while (running)
-	{
-		while (SDL_PollEvent(&event))
-		{
-			if (event.type == SDL_QUIT)
-			{
-				running = false;
-			}
-		}
-
-		SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-		SDL_RenderClear(renderer);
-
-	
-
-		rect.SetPosition(0, 0, 0.f, 0.f);
-		rect.Draw(renderer);
-		rect.SetPosition(800, 0, 1.f, 0.f);
-		rect.Draw(renderer);
-		rect.SetPosition(800, 800, 1.f, 1.f);
-		rect.Draw(renderer);
-		rect.SetPosition(0, 800, 0.f, 1.f);
-		rect.Draw(renderer);
-		rect.SetPosition(400, 400, 0.5f, 0.5f);
-		rect.Draw(renderer);
-
-		img.SetPosition(0, 0, 0.f, 0.f);
-		img.Draw(renderer);
-
-		SDL_RenderPresent(renderer);
-	}
+	InputManager::HandleInput(renderer);
 
 	SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(window);
@@ -131,64 +107,3 @@ int main(int argc, char* argv[])
 
 	return 0;
 }
-
-
-
-/*
-#include <iostream>
-#include "SDL.h"
-#include "SDL_image.h"
-
-		int main(int argc, char* argv[]) {
-			if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_EVENTS) < 0) {
-				std::cout << "Error SDL2 Initialization : " << SDL_GetError();
-				return 1;
-			}
-
-			SDL_Window* window = SDL_CreateWindow("First program", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, SDL_WINDOW_OPENGL);
-			if (window == NULL) {
-				std::cout << "Error window creation";
-				return 3;
-			}
-
-			SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
-			if (renderer == NULL) {
-				std::cout << "Error renderer creation";
-				return 4;
-			}
-
-			SDL_Surface* lettuce_sur = IMG_Load("C:/Users/icotvaquero/Documents/image.bmp");
-			if (lettuce_sur == NULL) {
-				std::cout << "Error loading image: " << IMG_GetError();
-				return 5;
-			}
-
-			SDL_Texture* lettuce_tex = SDL_CreateTextureFromSurface(renderer, lettuce_sur);
-			if (lettuce_tex == NULL) {
-				std::cout << "Error creating texture";
-				return 6;
-			}
-
-			SDL_FreeSurface(lettuce_sur);
-
-			while (true) {
-				SDL_Event e;
-				if (SDL_PollEvent(&e)) {
-					if (e.type == SDL_QUIT) {
-						break;
-					}
-				}
-
-				SDL_RenderClear(renderer);
-				SDL_RenderCopy(renderer, lettuce_tex, NULL, NULL);
-				SDL_RenderPresent(renderer);
-			}
-
-			SDL_DestroyTexture(lettuce_tex);
-			SDL_DestroyRenderer(renderer);
-			SDL_DestroyWindow(window);
-			SDL_Quit();
-
-			return 0;
-		}
-		*/
