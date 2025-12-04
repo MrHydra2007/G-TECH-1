@@ -1,4 +1,5 @@
-/*#include <SDL.h>
+#include <SDL.h>
+#include "SDL_image.h"
 #include "Rectangle.h"
 #include "Geometry.h"
 #include "Cercle.h"
@@ -131,9 +132,9 @@ int main(int argc, char* argv[])
 	return 0;
 }
 
-*/
 
 
+/*
 #include <iostream>
 #include "SDL.h"
 #include "SDL_image.h"
@@ -190,3 +191,4 @@ int main(int argc, char* argv[])
 
 			return 0;
 		}
+		*/
