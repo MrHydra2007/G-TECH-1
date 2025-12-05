@@ -24,7 +24,7 @@ Image::Image(SDL_Renderer* renderer, const char* path) : Geometry(0, 0, -1, -1)
 
 void Image::Draw(SDL_Renderer* renderer)
 {
-	SetPosition(0, 0, 0.f, 0.f);
+	SetPosition(400, 400, 0.5f, 0.5f);
 	SDL_Rect dst = { m_x, m_y, m_width, m_height };
 
 	SDL_RenderCopy(renderer, m_texture, NULL, &dst);

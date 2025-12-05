@@ -91,7 +91,7 @@ int main(int argc, char* argv[])
 
 
 	Rectangle rect(0, 0, 100, 50);
-	Image img(renderer, "C:/Users/icotvaquero/Documents/image_test.png");
+	Image img(renderer, "../Assets/image_test.png");
 	
 
 	Cercle circle(400,400,40,200);
