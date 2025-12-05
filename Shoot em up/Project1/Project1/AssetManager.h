@@ -15,6 +15,6 @@ class AssetManager
 public:
 	static AssetManager* Get();
 
-	SDL_Texture* LoadTexture(SDL_Renderer* renderer, const char* path)
+	SDL_Texture* LoadTexture(SDL_Renderer* renderer, const char* path);
 };
 
