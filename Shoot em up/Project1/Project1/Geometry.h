@@ -14,6 +14,7 @@ public:
 	Geometry(int x, int y, int width, int height);
 	~Geometry() = default;
 
+	virtual void Resize(int width, int height) = 0;
 	virtual void Update() {};
 	virtual void Draw(SDL_Renderer* renderer) = 0;
 	void SetPosition(int x, int y, float anchorX, float anchorY);

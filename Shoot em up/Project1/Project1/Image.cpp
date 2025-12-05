@@ -29,3 +29,14 @@ void Image::Draw(SDL_Renderer* renderer)
 
 	SDL_RenderCopy(renderer, m_texture, NULL, &dst);
 }
+
+void Image::Resize(int width, int height)
+{
+	float factorWidth = width / m_width;
+	float factorHeight = height / m_height;
+
+	float factorMin = std::min(factorWidth, factorHeight);
+
+	m_width *= factorMin;
+	m_height *= factorMin;
+}
