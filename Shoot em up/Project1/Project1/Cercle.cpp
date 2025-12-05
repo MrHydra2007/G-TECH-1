@@ -1,7 +1,5 @@
 #include "Cercle.h"
 
-
-
 void Cercle::Draw(SDL_Renderer* renderer)
 {
 	if (m_height < 2)

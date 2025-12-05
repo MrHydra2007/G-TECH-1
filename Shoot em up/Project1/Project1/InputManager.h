@@ -12,5 +12,9 @@ private :
 	bool isKeyDown = false;
 	bool isKeyUp = false;
 	bool isKeyHeld = false;
+
+	bool isMouseDown = false;
+	bool isMouseUp = false;
+	bool isMouseHeld = false;
 };
 

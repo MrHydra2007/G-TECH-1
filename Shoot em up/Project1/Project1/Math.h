@@ -2,6 +2,6 @@
 
 struct Vector2
 {
-	int width;
-	int height;
+	int x;
+	int y;
 };

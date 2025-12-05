@@ -4,6 +4,7 @@ void InputManager::HandleInput(SDL_Renderer* renderer)
 {
 	bool running = true;
 	InputManager input;
+	SDL_Event event;
 
 	while (running)
 	{
@@ -24,17 +25,35 @@ void InputManager::HandleInput(SDL_Renderer* renderer)
 			input.isKeyHeld = false;
 		}
 
-		SDL_Event event;
+		if (input.isMouseDown)
+		{
+			std::cout<< "click aux coordonnees: " << event.button.x << ", " << event.button.y << std::endl;
+			input.isMouseDown = false;
+		}
+
+		if (input.isMouseUp)
+		{
+			std::cout << "\n";
+			input.isMouseUp = false;
+		}
+
+		if (input.isMouseHeld)
+		{
+			std::cout << "Click held" << std::endl;
+			input.isMouseHeld = false;
+		}
+
+
 		while (SDL_PollEvent(&event))
 		{
 			switch (event.type)
 			{
 			case SDL_MOUSEBUTTONDOWN:
-				std::cout << "click aux coordonnees: " << event.button.x << ", " << event.button.y << std::endl;
+				input.isMouseDown = true;
 				break;
 
 			case SDL_MOUSEBUTTONUP:
-				std::cout << "\n";
+				input.isMouseUp = true;
 				break;
 
 			case SDL_QUIT:
@@ -48,8 +67,10 @@ void InputManager::HandleInput(SDL_Renderer* renderer)
 				break;
 
 			case SDL_KEYDOWN:
-				if (event.key.repeat)
+				if (input.isKeyDown == true && input.isKeyUp == false)
+				{
 					input.isKeyHeld = true;
+				}
 				else
 					input.isKeyDown = true;
 
