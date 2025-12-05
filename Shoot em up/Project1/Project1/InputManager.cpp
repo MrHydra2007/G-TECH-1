@@ -1,87 +1,80 @@
 #include "InputManager.h"
+#include<iostream>
+#include"Geometry.h"
 
-void InputManager::HandleInput(SDL_Renderer* renderer)
+bool InputManager::HandleInput()
 {
-	bool running = true;
-	InputManager input;
+
+
+	/*if (KD.isKeyDown)
+	{
+		std::cout << "Kew Down" << std::endl;
+		KD.isKeyDown = false;
+	}
+	if (KD.isKeyUp)
+	{
+		std::cout << "Key Up" << std::endl;
+		KD.isKeyUp = false;
+	}
+
+	if (KD.isKeyHeld)
+	{
+		std::cout << "Key Held" << std::endl;
+		KD.isKeyHeld = false;
+	}
+
+	if (input.isMouseDown)
+	{
+		std::cout << "click aux coordonnees: " << event.button.x << ", " << event.button.y << std::endl;
+		input.isMouseDown = false;
+	}
+
+	if (input.isMouseUp)
+	{
+		std::cout << "\n";
+		input.isMouseUp = false;
+	}
+
+	if (input.isMouseHeld)
+	{
+		std::cout << "Click held" << std::endl;
+		input.isMouseHeld = false;
+	}*/
+
 	SDL_Event event;
 
-	while (running)
+	while (SDL_PollEvent(&event))
 	{
-		if (input.isKeyDown)
+		switch (event.type)
 		{
-			std::cout << "Kew Down" << std::endl;
-			input.isKeyDown = false;
-		}
-		if (input.isKeyUp)
-		{
-			std::cout << "Key Up" << std::endl;
-			input.isKeyUp = false;
-		}
+		case SDL_MOUSEBUTTONDOWN:
+		    isMouseDown = true;
+			break;
 
-		if (input.isKeyHeld)
-		{
-			std::cout << "Key Held" << std::endl;
-			input.isKeyHeld = false;
-		}
+		case SDL_MOUSEBUTTONUP:
+			isMouseUp = true;
+			break;
 
-		if (input.isMouseDown)
-		{
-			std::cout<< "click aux coordonnees: " << event.button.x << ", " << event.button.y << std::endl;
-			input.isMouseDown = false;
-		}
+		case SDL_QUIT:
+			return false;
+			break;
 
-		if (input.isMouseUp)
-		{
-			std::cout << "\n";
-			input.isMouseUp = false;
-		}
+		case SDL_KEYUP:
+			keys[event.key.keysym.scancode] = { false, true, false};
 
-		if (input.isMouseHeld)
-		{
-			std::cout << "Click held" << std::endl;
-			input.isMouseHeld = false;
-		}
+			break;
 
+		case SDL_KEYDOWN:
+			keys[event.key.keysym.scancode] = { true, false, false };
 
-		while (SDL_PollEvent(&event))
-		{
-			switch (event.type)
+			switch (event.key.keysym.sym)
 			{
-			case SDL_MOUSEBUTTONDOWN:
-				input.isMouseDown = true;
-				break;
-
-			case SDL_MOUSEBUTTONUP:
-				input.isMouseUp = true;
-				break;
-
-			case SDL_QUIT:
-				running = false;
-				break;
-
-			case SDL_KEYUP:
-				input.isKeyUp = true;
-				input.isKeyHeld = false;
-				input.isKeyDown = false;
-				break;
-
-			case SDL_KEYDOWN:
-				if (input.isKeyDown == true && input.isKeyUp == false)
-				{
-					input.isKeyHeld = true;
-				}
-				else
-					input.isKeyDown = true;
-
-				switch (event.key.keysym.sym)
-				{
-				case SDLK_ESCAPE:
-					running = false;
-					break;
-				}
+			case SDLK_ESCAPE:
+				return false;
 				break;
 			}
+			break;
 		}
 	}
+	return true;
 }

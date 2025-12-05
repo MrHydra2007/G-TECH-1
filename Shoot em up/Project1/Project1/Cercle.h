@@ -7,4 +7,5 @@ public:
 	Cercle(int x, int y, int width, int height) : Geometry(x, y, width, height) {}
 
 	void Draw(SDL_Renderer* renderer) override;
+	void Update() override;
 };

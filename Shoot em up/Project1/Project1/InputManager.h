@@ -1,17 +1,28 @@
 #pragma once
+#include<map>
 #include<SDL.h>
-#include<iostream>
+
+struct KeyData
+{
+	bool isDown = false;
+	bool isUp = false;
+	bool isHeld = false;
+};
+
 
 class InputManager
 {
 public:
-	static void HandleInput(SDL_Renderer* renderer);
+	static InputManager& getInstance() {
+		static InputManager instance;
+		return instance;
+	}
+	bool HandleInput();
 
-private :
+	bool isKeyDown(SDL_Scancode code) { return keys[code].isDown; }
 
-	bool isKeyDown = false;
-	bool isKeyUp = false;
-	bool isKeyHeld = false;
+protected :
+	std::map<SDL_Scancode, KeyData> keys;
 
 	bool isMouseDown = false;
 	bool isMouseUp = false;

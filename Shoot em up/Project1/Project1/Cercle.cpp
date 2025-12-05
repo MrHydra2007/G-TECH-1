@@ -1,4 +1,7 @@
 #include "Cercle.h"
+#include "InputManager.h"
+#include <iostream>
+
 
 void Cercle::Draw(SDL_Renderer* renderer)
 {
@@ -16,4 +19,12 @@ void Cercle::Draw(SDL_Renderer* renderer)
 		int y2 = m_width * sin(step * (i + 1)) + m_y;
 		SDL_RenderDrawLine(renderer, x1, y1, x2, y2);
 	}
+}
+
+void Cercle::Update()
+{
+	InputManager IM = InputManager::getInstance();
+
+	if (IM.isKeyDown(SDL_SCANCODE_A))
+		std::cout << "Touche a ";
 }

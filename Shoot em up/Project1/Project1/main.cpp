@@ -88,20 +88,29 @@ int main(int argc, char* argv[])
 		SDL_Quit();
 		return 1;
 	}
+
+
 	Rectangle rect(0, 0, 100, 50);
-	Image img(renderer);
+	Image img(renderer, "C:/Users/icotvaquero/Documents/image_test.png");
 	
-	SDL_RenderClear(renderer);
+
 	Cercle circle(400,400,40,200);
+	InputManager IM = InputManager::getInstance();
 
 	img.SetPosition(0, 0, 0.5f, 0.5f);
-	img.Draw(renderer);
-	SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
-	circle.SetPosition(370, 450, 0.5f, 0.5f);
-	circle.Draw(renderer);
+	bool isRunning = true;
+	while (isRunning) {
 
-	SDL_RenderPresent(renderer);
-	InputManager::HandleInput(renderer);
+		SDL_RenderClear(renderer);
+		img.Draw(renderer);
+		isRunning = IM.HandleInput();
+		circle.Update();
+		SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
+		circle.SetPosition(370, 450, 0.5f, 0.5f);
+		circle.Draw(renderer);
+		SDL_RenderPresent(renderer);
+	}
+
 
 	SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(window);
