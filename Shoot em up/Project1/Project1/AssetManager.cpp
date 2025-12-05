@@ -19,5 +19,5 @@ SDL_Texture* AssetManager::LoadTexture(SDL_Renderer* renderer, const char* path)
 	if (it != m_textures.end())
 		return it.second;
 
-	SDL_Surface* surface = SDL_LoadBMP(m_path)
+	SDL_Surface* surface = SDL_LoadBMP(path);
 }
