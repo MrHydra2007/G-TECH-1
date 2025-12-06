@@ -1,0 +1,25 @@
+﻿  AssetManager.cpp
+C:\Users\ikerc\Documents\GitHub\G-TECH-1\Shoot em up\Project1\Project1\AssetManager.cpp(3,9): error C1083: No se puede abrir el archivo incluir: 'SDL.h': No such file or directory
+  Cercle.cpp
+C:\Users\ikerc\Documents\GitHub\G-TECH-1\Shoot em up\Project1\Project1\Geometry.h(2,10): error C1083: No se puede abrir el archivo incluir: 'SDL.h': No such file or directory
+  (compilando archivo de origen "Cercle.cpp")
+  
+  Geometry.cpp
+C:\Users\ikerc\Documents\GitHub\G-TECH-1\Shoot em up\Project1\Project1\Geometry.h(2,10): error C1083: No se puede abrir el archivo incluir: 'SDL.h': No such file or directory
+  (compilando archivo de origen "Geometry.cpp")
+  
+  Image.cpp
+C:\Users\ikerc\Documents\GitHub\G-TECH-1\Shoot em up\Project1\Project1\Geometry.h(2,10): error C1083: No se puede abrir el archivo incluir: 'SDL.h': No such file or directory
+  (compilando archivo de origen "Image.cpp")
+  
+  InputManager.cpp
+C:\Users\ikerc\Documents\GitHub\G-TECH-1\Shoot em up\Project1\Project1\InputManager.h(3,9): error C1083: No se puede abrir el archivo incluir: 'SDL.h': No such file or directory
+  (compilando archivo de origen "InputManager.cpp")
+  
+  main.cpp
+C:\Users\ikerc\Documents\GitHub\G-TECH-1\Shoot em up\Project1\Project1\main.cpp(1,10): error C1083: No se puede abrir el archivo incluir: 'SDL.h': No such file or directory
+  Rectangle.cpp
+C:\Users\ikerc\Documents\GitHub\G-TECH-1\Shoot em up\Project1\Project1\Geometry.h(2,10): error C1083: No se puede abrir el archivo incluir: 'SDL.h': No such file or directory
+  (compilando archivo de origen "Rectangle.cpp")
+  
+  Generando código...

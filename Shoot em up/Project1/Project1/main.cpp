@@ -1,5 +1,6 @@
 #include <SDL.h>
 #include "SDL_image.h"
+#include "AssetManager.h"
 #include "Rectangle.h"
 #include "InputManager.h"
 #include "Geometry.h"
