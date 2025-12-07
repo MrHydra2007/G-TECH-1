@@ -1,8 +1,9 @@
 ﻿  Cercle.cpp
 C:\Users\ikerc\Documents\GitHub\G-TECH-1\Shoot em up\Project1\Project1\Cercle.cpp(13,18): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
-C:\Users\ikerc\Documents\GitHub\G-TECH-1\Shoot em up\Project1\Project1\Cercle.cpp(16,15): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ikerc\Documents\GitHub\G-TECH-1\Shoot em up\Project1\Project1\Cercle.cpp(20,12): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\ikerc\Documents\GitHub\G-TECH-1\Shoot em up\Project1\Project1\Cercle.cpp(21,12): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\ikerc\Documents\GitHub\G-TECH-1\Shoot em up\Project1\Project1\Cercle.cpp(25,16): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\ikerc\Documents\GitHub\G-TECH-1\Shoot em up\Project1\Project1\Cercle.cpp(26,16): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\ikerc\Documents\GitHub\G-TECH-1\Shoot em up\Project1\Project1\Cercle.cpp(15,15): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ikerc\Documents\GitHub\G-TECH-1\Shoot em up\Project1\Project1\Cercle.cpp(17,12): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\ikerc\Documents\GitHub\G-TECH-1\Shoot em up\Project1\Project1\Cercle.cpp(18,12): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\ikerc\Documents\GitHub\G-TECH-1\Shoot em up\Project1\Project1\Cercle.cpp(22,16): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\ikerc\Documents\GitHub\G-TECH-1\Shoot em up\Project1\Project1\Cercle.cpp(23,16): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\ikerc\Documents\GitHub\G-TECH-1\Shoot em up\Project1\Project1\Cercle.cpp(35,15): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
   Project1.vcxproj -> C:\Users\ikerc\Documents\GitHub\G-TECH-1\Shoot em up\Project1\x64\Debug\Project1.exe

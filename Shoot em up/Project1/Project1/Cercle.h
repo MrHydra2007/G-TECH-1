@@ -7,6 +7,8 @@ class Cercle : public Geometry
 {
 	int m_precision;
 
+	void DrawAtPosition(SDL_Renderer* renderer, Vector2 center);
+
 public:
 	Cercle(int radius, int precision = DEFAULT_PRECISION);
 
