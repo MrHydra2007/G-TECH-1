@@ -39,7 +39,7 @@ void Cercle::Update()
 	Vector2 currentPos = GetPosition(0.5f, 0.5f);
 
 	int speed = 1; 
-
+	
 	if (IM.isHeld(SDL_SCANCODE_A) || IM.isHeld(SDL_SCANCODE_LEFT))
 	{
 		SetPosition(currentPos.x - speed, currentPos.y, 0.5f, 0.5f);
@@ -56,4 +56,7 @@ void Cercle::Update()
 	{
 		SetPosition(currentPos.x, currentPos.y + speed, 0.5f, 0.5f);
 	}
+
+	//if (currentPos.x > 801)
+		//currentPos.x - 801;
 }
