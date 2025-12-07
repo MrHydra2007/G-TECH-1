@@ -1,6 +1,6 @@
 #pragma once
 #include "Geometry.h"
-#include <string>
+
 
 struct SDL_Texture;
 
@@ -15,5 +15,4 @@ public:
 
     void Draw(SDL_Renderer* renderer) override;
     void Resize(int width, int height) override;
-
 };

@@ -1,5 +1,5 @@
 #pragma once
-#include<vector>
+#include<map>
 
 struct SDL_Texture;
 struct SDL_Renderer;
@@ -9,8 +9,7 @@ class AssetManager
 {
 	static AssetManager* Instance;
 
-	std::vector<SDL_Texture*> m_textures;
-	std::vector<const char*> m_path;
+	std::map<const char*, SDL_Texture*> m_textures;
 
 public:
 	static AssetManager* Get();

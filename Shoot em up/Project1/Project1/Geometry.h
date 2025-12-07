@@ -1,6 +1,7 @@
 #pragma once
-#include <SDL.h>
 #include "Math.h"
+
+struct SDL_Renderer;
 
 class Geometry
 {
@@ -11,12 +12,13 @@ protected:
 	int m_height;
 
 public:
-	Geometry(int x, int y, int width, int height);
+	Geometry(int width, int height);
 	~Geometry() = default;
 
-	virtual void Resize(int width, int height) = 0;
+	virtual void Resize(int width, int height);
+
 	virtual void Update() {};
 	virtual void Draw(SDL_Renderer* renderer) = 0;
-	void SetPosition(int x, int y, float anchorX, float anchorY);
-	Vector2 GetPosition(float anchorX, float anchorY) const;
+	void SetPosition(int x, int y, float anchorX = 0.5f, float anchorY = 0.5f);
+	Vector2 GetPosition(float anchorX = 0.5f, float anchorY = 0.5f) const;
 };

@@ -1,9 +1,7 @@
-#include <SDL.h>
-#include "SDL_image.h"
-#include "AssetManager.h"
+#include<SDL.h>
+#include<SDL_image.h>
 #include "Rectangle.h"
 #include "InputManager.h"
-#include "Geometry.h"
 #include "Cercle.h"
 #include <iostream>
 #include "Image.h"
@@ -91,11 +89,11 @@ int main(int argc, char* argv[])
 	}
 
 
-	Rectangle rect(0, 0, 100, 50);
+	Rectangle rect(100, 50);
 	Image img(renderer, "../Assets/image_test.png");
 	
 
-	Cercle circle(400,400,40,200);
+	Cercle circle(40,200);
 	InputManager IM = InputManager::getInstance();
 
 	img.SetPosition(0, 0, 0.5f, 0.5f);

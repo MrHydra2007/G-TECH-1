@@ -4,8 +4,7 @@
 class Rectangle : public Geometry
 {
 public:
-	Rectangle(int x, int y, int width, int height) : Geometry(x, y, width, height) {}
+	Rectangle(int width, int height);
 
 	void Draw(SDL_Renderer* renderer) override;
-	void Resize(int width, int height) override;
 };

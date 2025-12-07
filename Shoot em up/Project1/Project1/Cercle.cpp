@@ -1,23 +1,35 @@
 #include "Cercle.h"
 #include "InputManager.h"
 #include <iostream>
+#include<SDL.h>
 
+
+Cercle::Cercle(int radius, int precision) : Geometry(radius * 2, radius * 2)
+{
+	m_precision = precision;
+}
 
 void Cercle::Draw(SDL_Renderer* renderer)
 {
-	if (m_height < 2)
-	{
-		return;
-	}
-	float step = (2 * M_PI) / m_height;
-	for (int i = 0; i <= m_height; ++i)
-	{
-		int x1 = m_width * cos(step * i) + m_x;
-		int y1 = m_width * sin(step * i) + m_y;
+	float perimeter = 2 * M_PI;
+	float step = perimeter / m_precision;
 
-		int x2 = m_width * cos(step * (i + 1)) + m_x;
-		int y2 = m_width * sin(step * (i + 1)) + m_y;
-		SDL_RenderDrawLine(renderer, x1, y1, x2, y2);
+	float radius = GetRadius();
+
+	Vector2 center = GetPosition(0.5f, 0.5f);
+
+	int lastX = radius * cos(0) + center.x;
+	int lastY = radius * sin(0) + center.y;
+
+	for (int i = 1; i <= m_precision; i++)
+	{
+		int currentX = radius * cos(step * i) + center.x;
+		int currentY = radius * sin(step * i) + center.y;
+
+		SDL_RenderDrawLine(renderer, lastX, lastY, currentX, currentY);
+
+		lastX = currentX;
+		lastY = currentY;
 	}
 }
 
