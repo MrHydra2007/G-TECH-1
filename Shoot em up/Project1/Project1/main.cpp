@@ -96,7 +96,7 @@ int main(int argc, char* argv[])
 	Cercle circle(40,200);
 	InputManager IM = InputManager::getInstance();
 
-	img.SetPosition(0, 0, 0.5f, 0.5f);
+	img.SetPosition(400, 400, 0.5f, 0.5f);
 	bool isRunning = true;
 	while (isRunning) {
 

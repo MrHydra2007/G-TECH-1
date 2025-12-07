@@ -19,7 +19,7 @@ public:
 	}
 	bool HandleInput();
 
-	bool isKeyDown(SDL_Scancode code) { return keys[code].isDown; }
+	bool isDown(SDL_Scancode code) { return keys[code].isDown; }
 
 protected :
 	std::map<SDL_Scancode, KeyData> keys;

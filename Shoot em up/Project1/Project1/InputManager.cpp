@@ -4,26 +4,26 @@
 
 bool InputManager::HandleInput()
 {
+	KeyData KD;
 
-
-	/*if (KD.isKeyDown)
+	if (KD.isDown)
 	{
 		std::cout << "Kew Down" << std::endl;
-		KD.isKeyDown = false;
+		KD.isDown = false;
 	}
-	if (KD.isKeyUp)
+	if (KD.isUp)
 	{
 		std::cout << "Key Up" << std::endl;
-		KD.isKeyUp = false;
+		KD.isUp = false;
 	}
 
-	if (KD.isKeyHeld)
+	if (KD.isHeld)
 	{
 		std::cout << "Key Held" << std::endl;
-		KD.isKeyHeld = false;
+		KD.isHeld = false;
 	}
 
-	if (input.isMouseDown)
+	/*if (input.isMouseDown)
 	{
 		std::cout << "click aux coordonnees: " << event.button.x << ", " << event.button.y << std::endl;
 		input.isMouseDown = false;

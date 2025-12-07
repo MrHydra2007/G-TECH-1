@@ -1,1 +1,15 @@
-﻿LINK : fatal error LNK1104: no se puede abrir el archivo 'SDL2.lib'
+﻿  Cercle.cpp
+C:\Users\ikerc\Documents\GitHub\G-TECH-1\Shoot em up\Project1\Project1\Cercle.cpp(14,18): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\ikerc\Documents\GitHub\G-TECH-1\Shoot em up\Project1\Project1\Cercle.cpp(17,15): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ikerc\Documents\GitHub\G-TECH-1\Shoot em up\Project1\Project1\Cercle.cpp(21,12): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\ikerc\Documents\GitHub\G-TECH-1\Shoot em up\Project1\Project1\Cercle.cpp(22,12): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\ikerc\Documents\GitHub\G-TECH-1\Shoot em up\Project1\Project1\Cercle.cpp(26,16): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\ikerc\Documents\GitHub\G-TECH-1\Shoot em up\Project1\Project1\Cercle.cpp(27,16): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+  InputManager.cpp
+  main.cpp
+C:\Users\ikerc\Documents\GitHub\G-TECH-1\Shoot em up\Project1\Project1\main.cpp(32,12): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\ikerc\Documents\GitHub\G-TECH-1\Shoot em up\Project1\Project1\main.cpp(33,12): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\ikerc\Documents\GitHub\G-TECH-1\Shoot em up\Project1\Project1\main.cpp(45,36): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\ikerc\Documents\GitHub\G-TECH-1\Shoot em up\Project1\Project1\main.cpp(45,33): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+  Generando código...
+  Project1.vcxproj -> C:\Users\ikerc\Documents\GitHub\G-TECH-1\Shoot em up\Project1\x64\Debug\Project1.exe

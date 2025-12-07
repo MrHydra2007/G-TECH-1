@@ -37,6 +37,6 @@ void Cercle::Update()
 {
 	InputManager IM = InputManager::getInstance();
 
-	if (IM.isKeyDown(SDL_SCANCODE_A))
+	if (IM.isDown(SDL_SCANCODE_A))
 		std::cout << "Touche a ";
 }
