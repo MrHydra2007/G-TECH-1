@@ -1,5 +1,5 @@
-#include<SDL.h>
-#include<SDL_image.h>
+#include <SDL.h>
+#include <SDL_image.h>
 #include "Rectangle.h"
 #include "InputManager.h"
 #include "Cercle.h"
@@ -60,18 +60,18 @@ void DrawSquare(SDL_Renderer* renderer, int x1, int y1, int x2, int y2)
 	}
 }
 
-
+const int  SCREEN_WIDTH = 801;
+const int  SCREEN_HEIGHT = 801;
 
 int main(int argc, char* argv[])
 {
-
 	if (SDL_Init(SDL_INIT_VIDEO) != 0)
 	{
 		std::cout << "SDL_Init Error: " << SDL_GetError() << std::endl;
 		return 1;
 	}
 
-	SDL_Window* window = SDL_CreateWindow("SDL", 100, 100, 801, 801, SDL_WINDOW_RESIZABLE);
+	SDL_Window* window = SDL_CreateWindow("SDL", 100, 100, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_RESIZABLE);
 	if (!window)
 	{
 		std::cout << "SDL_CreateWindow Error: " << SDL_GetError() << std::endl;
@@ -88,28 +88,30 @@ int main(int argc, char* argv[])
 		return 1;
 	}
 
-
 	Rectangle rect(100, 50);
 	Image img(renderer, "../Assets/image_test.png");
-	
 
-	Cercle circle(40,200);
-	InputManager IM = InputManager::getInstance();
+	Cercle circle(40, 200);
+	InputManager& IM = InputManager::getInstance();
 
 	img.SetPosition(400, 400, 0.5f, 0.5f);
+	circle.SetPosition(370, 450, 0.5f, 0.5f);
+
 	bool isRunning = true;
 	while (isRunning) {
-
+		SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 		SDL_RenderClear(renderer);
-		img.Draw(renderer);
+
 		isRunning = IM.HandleInput();
+
 		circle.Update();
+
+		img.Draw(renderer);
 		SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
-		circle.SetPosition(370, 450, 0.5f, 0.5f);
 		circle.Draw(renderer);
+
 		SDL_RenderPresent(renderer);
 	}
-
 
 	SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(window);

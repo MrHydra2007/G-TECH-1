@@ -1,45 +1,13 @@
 #include "InputManager.h"
-#include<iostream>
-#include"Geometry.h"
+#include <iostream>
 
 bool InputManager::HandleInput()
 {
-	KeyData KD;
-
-	if (KD.isDown)
+	for (auto& pair : keys)
 	{
-		std::cout << "Kew Down" << std::endl;
-		KD.isDown = false;
+		pair.second.isDown = false;
+		pair.second.isUp = false;
 	}
-	if (KD.isUp)
-	{
-		std::cout << "Key Up" << std::endl;
-		KD.isUp = false;
-	}
-
-	if (KD.isHeld)
-	{
-		std::cout << "Key Held" << std::endl;
-		KD.isHeld = false;
-	}
-
-	/*if (input.isMouseDown)
-	{
-		std::cout << "click aux coordonnees: " << event.button.x << ", " << event.button.y << std::endl;
-		input.isMouseDown = false;
-	}
-
-	if (input.isMouseUp)
-	{
-		std::cout << "\n";
-		input.isMouseUp = false;
-	}
-
-	if (input.isMouseHeld)
-	{
-		std::cout << "Click held" << std::endl;
-		input.isMouseHeld = false;
-	}*/
 
 	SDL_Event event;
 
@@ -48,7 +16,7 @@ bool InputManager::HandleInput()
 		switch (event.type)
 		{
 		case SDL_MOUSEBUTTONDOWN:
-		    isMouseDown = true;
+			isMouseDown = true;
 			break;
 
 		case SDL_MOUSEBUTTONUP:
@@ -60,12 +28,16 @@ bool InputManager::HandleInput()
 			break;
 
 		case SDL_KEYUP:
-			keys[event.key.keysym.scancode] = { false, true, false};
-
+			keys[event.key.keysym.scancode].isUp = true;
+			keys[event.key.keysym.scancode].isHeld = false;
 			break;
 
 		case SDL_KEYDOWN:
-			keys[event.key.keysym.scancode] = { true, false, false };
+			if (event.key.repeat == 0)
+			{
+				keys[event.key.keysym.scancode].isDown = true;
+			}
+			keys[event.key.keysym.scancode].isHeld = true;
 
 			switch (event.key.keysym.sym)
 			{

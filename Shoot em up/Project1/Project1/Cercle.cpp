@@ -1,8 +1,7 @@
 #include "Cercle.h"
 #include "InputManager.h"
 #include <iostream>
-#include<SDL.h>
-
+#include <SDL.h>
 
 Cercle::Cercle(int radius, int precision) : Geometry(radius * 2, radius * 2)
 {
@@ -35,8 +34,26 @@ void Cercle::Draw(SDL_Renderer* renderer)
 
 void Cercle::Update()
 {
-	InputManager IM = InputManager::getInstance();
+	InputManager& IM = InputManager::getInstance();
 
-	if (IM.isDown(SDL_SCANCODE_A))
-		std::cout << "Touche a ";
+	Vector2 currentPos = GetPosition(0.5f, 0.5f);
+
+	int speed = 1; 
+
+	if (IM.isHeld(SDL_SCANCODE_A) || IM.isHeld(SDL_SCANCODE_LEFT))
+	{
+		SetPosition(currentPos.x - speed, currentPos.y, 0.5f, 0.5f);
+	}
+	if (IM.isHeld(SDL_SCANCODE_D) || IM.isHeld(SDL_SCANCODE_RIGHT))
+	{
+		SetPosition(currentPos.x + speed, currentPos.y, 0.5f, 0.5f);
+	}
+	if (IM.isHeld(SDL_SCANCODE_W) || IM.isHeld(SDL_SCANCODE_UP))
+	{
+		SetPosition(currentPos.x, currentPos.y - speed, 0.5f, 0.5f);
+	}
+	if (IM.isHeld(SDL_SCANCODE_S) || IM.isHeld(SDL_SCANCODE_DOWN))
+	{
+		SetPosition(currentPos.x, currentPos.y + speed, 0.5f, 0.5f);
+	}
 }

@@ -1,6 +1,6 @@
 #pragma once
-#include<map>
-#include<SDL.h>
+#include <map>
+#include <SDL.h>
 
 struct KeyData
 {
@@ -9,7 +9,6 @@ struct KeyData
 	bool isHeld = false;
 };
 
-
 class InputManager
 {
 public:
@@ -17,15 +16,17 @@ public:
 		static InputManager instance;
 		return instance;
 	}
+
 	bool HandleInput();
 
 	bool isDown(SDL_Scancode code) { return keys[code].isDown; }
+	bool isUp(SDL_Scancode code) { return keys[code].isUp; }
+	bool isHeld(SDL_Scancode code) { return keys[code].isHeld; }
 
-protected :
+protected:
 	std::map<SDL_Scancode, KeyData> keys;
 
 	bool isMouseDown = false;
 	bool isMouseUp = false;
 	bool isMouseHeld = false;
 };
-
