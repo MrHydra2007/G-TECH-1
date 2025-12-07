@@ -57,6 +57,12 @@ void Cercle::Update()
 		SetPosition(currentPos.x, currentPos.y + speed, 0.5f, 0.5f);
 	}
 
-	//if (currentPos.x > 801)
-		//currentPos.x - 801;
+	if (currentPos.x > 801)
+		SetPosition(currentPos.x - 801, currentPos.y, 0.5f, 0.5f) ;
+	if (currentPos.x < 1)
+		SetPosition(currentPos.x + 801, currentPos.y, 0.5f, 0.5f);
+	if (currentPos.y < 1)
+		SetPosition(currentPos.x, currentPos.y + 801, 0.5f, 0.5f);
+	if (currentPos.y > 801)
+		SetPosition(currentPos.x, currentPos.y - 801, 0.5f, 0.5f);
 }
