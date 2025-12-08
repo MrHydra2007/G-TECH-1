@@ -15,4 +15,5 @@ public:
 	void Draw(SDL_Renderer* renderer) override;
 	int GetRadius() const { return m_width / 2; }
 	void Update() override;
+	bool Colision(const Geometry& other) override;
 };

@@ -91,11 +91,13 @@ int main(int argc, char* argv[])
 	Rectangle rect(100, 50);
 	Image img(renderer, "../Assets/image_test.png");
 
-	Cercle circle(40, 200);
+	Cercle circle1(40, 200);
+	Cercle circle2(40, 200);
 	InputManager& IM = InputManager::getInstance();
 
 	img.SetPosition(400, 400, 0.5f, 0.5f);
-	circle.SetPosition(370, 450, 0.5f, 0.5f);
+	circle1.SetPosition(200, 200, 0.5f, 0.5f);
+	circle2.SetPosition(400, 400, 0.5f, 0.5f);
 
 	bool isRunning = true;
 	while (isRunning) {
@@ -104,11 +106,20 @@ int main(int argc, char* argv[])
 
 		isRunning = IM.HandleInput();
 
-		circle.Update();
+		circle1.Update();
+
+		bool collision = circle1.Colision(circle2);
+
+		if (collision)
+		{
+			std::cout << "COLLISION DETECTEE !" << std::endl;
+		}
 
 		img.Draw(renderer);
+
 		SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
-		circle.Draw(renderer);
+		circle1.Draw(renderer);
+		circle2.Draw(renderer);
 
 		SDL_RenderPresent(renderer);
 	}
