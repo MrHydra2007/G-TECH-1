@@ -105,7 +105,7 @@ int main(int argc, char* argv[])
 		SDL_RenderClear(renderer);
 		if (SDL_GetTicks() > 60)
 		{
-			std::cout << SDL_GetTicks() << std::endl;
+			std::cout << SDL_GetTicks64() << std::endl;
 		}
 
 		isRunning = IM.HandleInput();

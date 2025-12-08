@@ -107,7 +107,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\Project1\SDL2\SDL2\SDL2\lib\x64</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\icotvaquero\Documents\GitHub\G-TECH-1\Shoot em up\Project1\SDL2\SDL2\SDL2\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib
 ;SDL2main.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
