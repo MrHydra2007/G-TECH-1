@@ -89,13 +89,13 @@ int main(int argc, char* argv[])
 	}
 
 	Rectangle rect(100, 50);
-	Image img(renderer, "../Assets/image_test.png");
+	//Image img(renderer, "../Assets/image_test.png");
 
 	Cercle circle1(40, 200);
 	Cercle circle2(40, 200);
 	InputManager& IM = InputManager::getInstance();
 
-	img.SetPosition(400, 400, 0.5f, 0.5f);
+	//img.SetPosition(400, 400, 0.5f, 0.5f);
 	circle1.SetPosition(200, 200, 0.5f, 0.5f);
 	circle2.SetPosition(400, 400, 0.5f, 0.5f);
 
@@ -103,6 +103,10 @@ int main(int argc, char* argv[])
 	while (isRunning) {
 		SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 		SDL_RenderClear(renderer);
+		if (SDL_GetTicks() > 60)
+		{
+			std::cout << SDL_GetTicks() << std::endl;
+		}
 
 		isRunning = IM.HandleInput();
 
@@ -115,7 +119,7 @@ int main(int argc, char* argv[])
 			std::cout << "COLLISION DETECTEE !" << std::endl;
 		}
 
-		img.Draw(renderer);
+		//img.Draw(renderer);
 
 		SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
 		circle1.Draw(renderer);

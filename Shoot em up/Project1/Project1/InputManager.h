@@ -2,15 +2,17 @@
 #include <map>
 #include <SDL.h>
 
-struct KeyData
-{
-	bool isDown = false;
-	bool isUp = false;
-	bool isHeld = false;
-};
 
 class InputManager
 {
+	struct KeyData
+	{
+		bool isDown = false;
+		bool isUp = false;
+		bool isHeld = false;
+	};
+
+
 public:
 	static InputManager& getInstance() {
 		static InputManager instance;
