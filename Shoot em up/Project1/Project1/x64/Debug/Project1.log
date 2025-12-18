@@ -1,6 +1,0 @@
-﻿  main.cpp
-C:\Users\ikerc\Documents\GitHub\G-TECH-1\Shoot em up\Project1\Project1\main.cpp(32,12): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\ikerc\Documents\GitHub\G-TECH-1\Shoot em up\Project1\Project1\main.cpp(33,12): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\ikerc\Documents\GitHub\G-TECH-1\Shoot em up\Project1\Project1\main.cpp(45,36): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\ikerc\Documents\GitHub\G-TECH-1\Shoot em up\Project1\Project1\main.cpp(45,33): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-  Project1.vcxproj -> C:\Users\ikerc\Documents\GitHub\G-TECH-1\Shoot em up\Project1\x64\Debug\Project1.exe
