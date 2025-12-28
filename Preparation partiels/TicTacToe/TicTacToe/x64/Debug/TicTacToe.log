@@ -1,0 +1,5 @@
+﻿  Grid.cpp
+  main.cpp
+C:\Users\ikerc\Documents\GitHub\G-TECH-1\Preparation partiels\TicTacToe\TicTacToe\main.cpp(79,12): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+  Generando código...
+  TicTacToe.vcxproj -> C:\Users\ikerc\Documents\GitHub\G-TECH-1\Preparation partiels\TicTacToe\x64\Debug\TicTacToe.exe
