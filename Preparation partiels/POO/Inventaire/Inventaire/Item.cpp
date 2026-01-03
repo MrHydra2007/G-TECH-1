@@ -1,6 +1,5 @@
 #include "Item.h"
 
-// Initialisation de l'inventaire statique
 std::vector<Item> Item::Inventory;
 
 void Item::AddItem(std::string name, int value)

@@ -8,7 +8,7 @@ class Item
 private:
 	std::string name;
 	int value;
-	static std::vector<Item> Inventory;  // Inventaire partagé entre tous les items
+	static std::vector<Item> Inventory;
 
 public:
 	Item(std::string n, int v) : name(n), value(v) {}
