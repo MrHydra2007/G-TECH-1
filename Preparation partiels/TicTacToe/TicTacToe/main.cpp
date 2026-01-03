@@ -24,6 +24,22 @@ void GetPlayerMove(int* row, int* col)
 	// TODO: Demander au joueur d'entrer les coordonnées de sa prochaine case (ligne et colonne)
 	// Assurez-vous que les entrées sont valides (0, 1 ou 2)
 
+	do {
+		std::cout << "Choisisez la ligne (0, 1 ou 2)" << std::endl;
+		std::cin >> *row;
+
+		if (*row < 0 || *row > 2)
+			std::cout << "Choisisez une valeur valable" << std::endl;
+	} while (*row < 0 || *row > 2);
+
+
+	do {
+		std::cout << "Choisisez la colonne (0, 1 ou 2)" << std::endl;
+		std::cin >> *col;
+
+		if (*col < 0 || *col > 2)
+			std::cout << "Choisisez une valeur valable" << std::endl;
+	} while (*col < 0 || *col > 2);
 	// BONUS:
 	// Proposez une méthode pour gérer les entrées invalides (saisie de caractère non numérique)
 }
@@ -35,6 +51,8 @@ void GetComputerMove(int* row, int* col)
 
 	int random = rand() % 3; // génère un nombre aléatoire entre 0 et 2
 
+	*row = rand() % 3;
+	*col = rand() % 3;
 	// BONUS:
 	// Proposez un algorithme plus optimisé pour choisir aléatoirement la prochaine case de l'ordinateur
 	// Faites toutes les modifications que vous jugez nécessaires sur l'architecture déjà en place
@@ -43,7 +61,53 @@ void GetComputerMove(int* row, int* col)
 int main() 
 {
 	srand(time(NULL)); // initialisation du générateur de nombres aléatoires
+	Grid grid;
 
+	Initialize(&grid);
+	Print(&grid);
+
+	bool isPlaying = true;
+	bool isPlayerTurn = true;
+
+
+	while (isPlaying)
+	{
+		int col;
+		int row;
+
+		if (isPlayerTurn)
+		{
+			GetPlayerMove(&row, &col);
+			SetCell(&grid, row, col, 'X');
+			Print(&grid);
+		}
+
+		if (!isPlayerTurn)
+		{
+			GetComputerMove(&row, &col);
+			SetCell(&grid, row, col, '0');
+			Print(&grid);
+		}
+
+		if (IsWin(&grid, 'X'))
+		{
+			std::cout << "Felicitations vous avez gagne." << std::endl;
+			isPlaying = false;
+		}
+		else if (IsWin(&grid, '0'))
+		{
+			std::cout << "C'est l'ordinateur qui a gagne." << std::endl;
+			isPlaying = false;
+		}
+
+		if (IsFull(&grid))
+		{
+			std::cout << "Egalite." << std::endl;
+			isPlaying = false;
+		}
+
+		isPlayerTurn = !isPlayerTurn;
+	}
 	// EX8
 	// TODO: Implémenter la boucle du jeu de morpion en utilisant les fonctions précédentes
 	// La boucle doit alterner entre le joueur et l'ordinateur jusqu'à ce qu'il y ait un gagnant ou que la grille soit pleine
