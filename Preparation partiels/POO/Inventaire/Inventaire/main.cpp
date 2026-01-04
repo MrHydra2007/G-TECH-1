@@ -1,18 +1,22 @@
 #include "Character.h"
+#include "Archer.h"
+#include "Warrior.h"
 #include "Item.h"
 
 int main()
 {
-	Character player(3, 5, "Manolo");
+	Warrior Warrior(10, 10, "Manolo");
+	Archer Archer(5, 7, "Patricio");
 
 
-	Item::AddItem("Epee en bois", 3);
+	Item::AddItem("Epee   en bois", 3);
 	Item::AddItem("Potion de soin", 5);
 
-	player.DisplayStats();
-	player.heal(7);
+	Warrior.DisplayStats();
+	Archer.DisplayStats();
+	Archer.heal(8);
 	Item::DisplayInventory();
-	player.DisplayStats();
+	Archer.DisplayStats();
 
 	return 0;
 }

@@ -4,14 +4,15 @@
 
 class Character
 {
-private:
+protected:
 	int health;
 	int maxHealth;
 	std::string name;
 
 public:
 	Character(int hp, int MaxHp, std::string n) : health(hp), maxHealth(MaxHp), name(n) {}
+	virtual ~Character() = default;
 
-	void heal(int amount);
-	void DisplayStats();
+	virtual void heal(int amount) ;
+	virtual void DisplayStats() ;
 };
