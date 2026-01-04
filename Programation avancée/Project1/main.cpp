@@ -44,7 +44,7 @@ int main()
 	}
 
 	FILE* pOut = NULL;
-	err = fopen_s(&pOut, "NewNewCapybara.bmp", "wb");
+	err = fopen_s(&pOut, "NewCapybara.bmp", "wb");
 
 	if (err != 0)
 	{
